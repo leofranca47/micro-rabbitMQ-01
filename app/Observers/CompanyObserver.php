@@ -27,7 +27,7 @@ class CompanyObserver
      */
     public function updating(Company $company)
     {
-        $company->url = Str::slug($this->name);
+        $company->url = Str::slug($company->name);
     }
 
     /**

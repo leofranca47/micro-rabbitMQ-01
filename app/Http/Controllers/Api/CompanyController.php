@@ -24,10 +24,10 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $category = $this->repository->with('category')->paginate();
-        return CompanyResource::collection($category);
+        $companies = $this->repository->getCompanies($request->get('filter', ''));
+        return CompanyResource::collection($companies);
     }
 
     /**
@@ -46,12 +46,12 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string $url
+     * @param  string $uuid
      * @return \Illuminate\Http\Response
      */
-    public function show($url)
+    public function show($uuid)
     {
-        $category = $this->repository->whereUrl($url)->firstOrFail();
+        $category = $this->repository->whereUuid($uuid)->firstOrFail();
 
         return new CompanyResource($category);
     }
@@ -60,27 +60,26 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  string  $url
+     * @param  string  $uuid
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $url)
+    public function update(StoreUpdateCompanyRequest $request, $uuid)
     {
-        $category = $this->repository->whereUrl($url)->firstOrFail();
-
+        $category = $this->repository->whereUuid($uuid)->firstOrFail();
         $category->update($request->validated());
 
-        return response()->json(['message' => 'success']);
+        return response()->json(['message' => 'updated']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  string  $url
+     * @param  string  $uuid
      * @return \Illuminate\Http\Response
      */
-    public function destroy($url)
+    public function destroy($uuid)
     {
-        $category = $this->repository->whereUrl($url)->firstOrFail();
+        $category = $this->repository->whereUuid($uuid)->firstOrFail();
 
         $category->delete();
 
