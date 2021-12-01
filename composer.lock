@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4842c22e789d247c4b660e69490545f",
+    "content-hash": "6e225a3c4022bfb28995e9bd0532c812",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1663,6 +1663,43 @@
                 }
             ],
             "time": "2021-09-25T08:23:19+00:00"
+        },
+        {
+            "name": "leofranca47/microservices-common",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leofranca47/leofranca47-microservices-common-.git",
+                "reference": "be71b4f2a9adb880928b61c691aa187a0fde3e75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leofranca47/leofranca47-microservices-common-/zipball/be71b4f2a9adb880928b61c691aa187a0fde3e75",
+                "reference": "be71b4f2a9adb880928b61c691aa187a0fde3e75",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leofranca47\\MicroservicesCommon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leo franca",
+                    "email": "leoprofissional@live.com"
+                }
+            ],
+            "description": "Package Files Utils Microservices",
+            "support": {
+                "issues": "https://github.com/leofranca47/leofranca47-microservices-common-/issues",
+                "source": "https://github.com/leofranca47/leofranca47-microservices-common-/tree/1.0.0"
+            },
+            "time": "2021-12-01T10:37:53+00:00"
         },
         {
             "name": "monolog/monolog",
